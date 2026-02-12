@@ -189,13 +189,87 @@
       <p>Let's build something awesome 🚀</p>
     </div>
 
-    <div class="contact-grid reveal">
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn primary">Send Message</button>
-      </form>
+    <div class="contact-box">
+  <h3>Quick Message Generator ⚡</h3>
+  <p>
+    Fill the details below and click <b>Open Email</b> to send me a message directly.
+    Or just copy the message and paste it anywhere.
+  </p>
+
+  <input type="text" id="userName" placeholder="Your Name" required>
+  <input type="email" id="userEmail" placeholder="Your Email" required>
+  <textarea id="userMessage" placeholder="Your Message..." required></textarea>
+
+  <div class="contact-buttons">
+    <button class="btn-primary" onclick="openEmail()">Open Email 🚀</button>
+    <button class="btn-secondary" onclick="copyMessage()">Copy Message 📋</button>
+    <button class="btn-secondary" onclick="copyEmail()">Copy My Email 📧</button>
+  </div>
+
+  <p id="copyStatus" class="copy-status"></p>
+</div>
+
+<script>
+  const myEmail = "jashembedded@gmail.com"; // 👈 CHANGE THIS TO YOUR REAL EMAIL
+
+  function openEmail() {
+    const name = document.getElementById("userName").value.trim();
+    const email = document.getElementById("userEmail").value.trim();
+    const message = document.getElementById("userMessage").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill all fields first!");
+      return;
+    }
+
+    const subject = encodeURIComponent("Project Inquiry from Portfolio Website");
+    const body = encodeURIComponent(
+      `Hello Jash,\n\nMy Name: ${name}\nMy Email: ${email}\n\nMessage:\n${message}\n\nRegards,\n${name}`
+    );
+
+    window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+  }
+
+  function copyMessage() {
+    const name = document.getElementById("userName").value.trim();
+    const email = document.getElementById("userEmail").value.trim();
+    const message = document.getElementById("userMessage").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill all fields first!");
+      return;
+    }
+
+    const finalText =
+`Hello Jash,
+
+My Name: ${name}
+My Email: ${email}
+
+Message:
+${message}
+
+Regards,
+${name}`;
+
+    navigator.clipboard.writeText(finalText);
+    showStatus("Message copied successfully ✅");
+  }
+
+  function copyEmail() {
+    navigator.clipboard.writeText(myEmail);
+    showStatus("Email copied! 📧");
+  }
+
+  function showStatus(text) {
+    const status = document.getElementById("copyStatus");
+    status.innerText = text;
+
+    setTimeout(() => {
+      status.innerText = "";
+    }, 2500);
+  }
+</script>
 
       <div class="social-box">
         <h3>Social Links</h3>
