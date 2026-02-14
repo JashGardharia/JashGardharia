@@ -121,14 +121,14 @@ function openEmail() {
   const subject = encodeURIComponent("Project Inquiry: " + name);
 
   const body = encodeURIComponent(
-`NAME: ${name}
+`Name: ${name}
 
-EMAIL: ${email}
+Email: ${email}
 
-MESSAGE:
+Message:
 ${message}
 
-THANK YOU`
+Thank you!`
   );
 
   window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
