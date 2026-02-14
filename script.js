@@ -24,7 +24,7 @@ function openEmail() {
     status.innerText = "> Executing MAil-To Protocol...";
     const subject = encodeURIComponent("Project Inquiry: " + name);
     const body = encodeURIComponent(
-        `From: ${name}\nEmail: ${email}\n\Message:\n${message}\n\nThank you!`
+        `\nFrom: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}\n\nThank you!`
     );
 
     window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
