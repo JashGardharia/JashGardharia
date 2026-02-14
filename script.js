@@ -17,14 +17,14 @@ function openEmail() {
     const status = document.getElementById("copyStatus");
 
     if (!name || !email || !message) {
-        status.innerText = "> ERROR: FIELDS_EMPTY. ABORT.";
+        status.innerText = "> Please Fill all the Fields!";
         return;
     }
 
-    status.innerText = "> EXECUTING MAILTO_PROTOCOL...";
+    status.innerText = "> Executing MAil-To Protocol...";
     const subject = encodeURIComponent("Project Inquiry: " + name);
     const body = encodeURIComponent(
-        `SYSTEM MSG FROM: ${name}\nEMAIL: ${email}\n\nPAYLOAD:\n${message}\n\n[END TRANSMISSION]`
+        `From: ${name}\nEmail: ${email}\n\Message:\n${message}\n\nThank you!`
     );
 
     window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
