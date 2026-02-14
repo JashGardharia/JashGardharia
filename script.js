@@ -146,14 +146,14 @@ function copyMessage() {
   }
 
   const finalText =
-`NAME: ${name}
+`Name: ${name}
 
-EMAIL: ${email}
+Email: ${email}
 
-MESSAGE:
+Message:
 ${message}
 
-THANK YOU`;
+Thank you!`;
 
   navigator.clipboard.writeText(finalText);
   status.innerText = "> Copied to clipboard 📋🔥";
