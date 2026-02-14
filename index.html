@@ -4,243 +4,292 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jash | Embedded Systems Developer</title>
-
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Google Font -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-  <!-- LOADER -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
   <div id="loader">
-    <div class="loader-box">
-      <div class="spinner"></div>
-      <h2>Loading Portfolio...</h2>
-      <p>Embedded Systems | Robotics | IoT</p>
+    <div class="loader-content">
+      <div class="scanner"></div>
+      <h1>INITIALIZING...</h1>
+      <p>Jash_Portfolio_v2.0 // Embedded Systems</p>
     </div>
   </div>
 
-  <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">Jash<span>.</span></div>
+    <div class="logo">Jash<span class="dot">.</span></div>
 
     <nav class="nav-links" id="navLinks">
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#hero" class="nav-item">Home</a>
+      <a href="#about" class="nav-item">About</a>
+      <a href="#skills" class="nav-item">Skills</a>
+      <a href="#projects" class="nav-item">Projects</a>
+      <a href="#contact" class="nav-item">Contact</a>
     </nav>
 
     <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
   <section class="hero" id="hero">
-    <div class="hero-content reveal">
-      <h1>Hi, I'm <span>Jash</span></h1>
-      <h2>Embedded Systems Developer | Arduino | ESP32 | IoT</h2>
-      <p>
-        I build smart robotics and IoT automation systems using Arduino and ESP32.
-      </p>
+    <div class="hero-container">
+      <div class="hero-text reveal-left">
+        <div class="badge">🚀 Open to Work</div>
+        <h1>Hi, I'm <span class="gradient-text">Jash</span></h1>
+        <h2>Embedded Systems Developer</h2>
+        <p class="hero-desc">
+          Architecting smart robotics and IoT automation ecosystems using <span class="highlight">Arduino</span> and <span class="highlight">ESP32</span>.
+        </p>
 
-      <div class="hero-buttons">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary glow-effect">View Projects</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual tilt-card reveal-right">
+        <div class="glass-card tech-stack-card">
+          <div class="card-header">
+            <div class="circle red"></div>
+            <div class="circle yellow"></div>
+            <div class="circle green"></div>
+            <span>System_Core_Stack.exe</span>
+          </div>
+          <ul>
+            <li><i class="fas fa-bolt"></i> Arduino / ESP32 / ESP8266</li>
+            <li><i class="fas fa-wifi"></i> WiFi Web Server + Bluetooth</li>
+            <li><i class="fas fa-robot"></i> Robotics + Motor Drivers</li>
+            <li><i class="fas fa-microchip"></i> OLED / LCD Interfaces</li>
+            <li><i class="fas fa-network-wired"></i> Sensors + Automation</li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <div class="hero-card reveal">
-      <div class="glow-circle"></div>
-      <h3>Tech Stack</h3>
-      <ul>
-        <li>⚡ Arduino / ESP32 / ESP8266</li>
-        <li>📡 WiFi Web Server + Bluetooth</li>
-        <li>🤖 Robotics + Motor Drivers</li>
-        <li>🖥 OLED / LCD Interfaces</li>
-        <li>📌 Sensors + Automation Systems</li>
-      </ul>
-    </div>
   </section>
 
-  <!-- ABOUT SECTION -->
   <section class="about" id="about">
-    <div class="section-title reveal">
+    <div class="section-header reveal-up">
       <h2>About Me</h2>
-      <p>Who I am and what I build</p>
+      <div class="line"></div>
     </div>
 
-    <div class="about-content reveal">
-      <p>
-        I'm <b>Jash</b>, an Embedded Systems Developer focused on <b>Arduino, ESP32, IoT, and Robotics</b>.
-        I design and build real-world automation systems using sensors, motors, relays, and communication modules.
-        My projects include <b>WiFi-controlled robots, RFID automation, smart home systems, and ESP32-CAM security projects</b>.
-        I work with <b>OLED/LCD displays</b>, <b>WiFi/Bluetooth modules</b>, and build clean web-based dashboards for IoT control.
-      </p>
+    <div class="about-container reveal-up">
+      <div class="glass-card about-card">
+        <p>
+          I'm <b>Jash</b>, an Embedded Systems Developer focused on <b>Arduino, ESP32, IoT, and Robotics</b>.
+          I design and build real-world automation systems using sensors, motors, relays, and communication modules.
+          <br><br>
+          My projects include <b>WiFi-controlled robots, RFID automation, smart home systems, and ESP32-CAM security projects</b>.
+          I work with <b>OLED/LCD displays</b>, <b>WiFi/Bluetooth modules</b>, and build clean web-based dashboards for IoT control.
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
   <section class="skills" id="skills">
-    <div class="section-title reveal">
-      <h2>Skills</h2>
-      <p>Technologies I use for robotics & IoT systems</p>
+    <div class="section-header reveal-up">
+      <h2>Technical Arsenal</h2>
+      <div class="line"></div>
     </div>
 
     <div class="skills-grid">
-      <div class="skill-card reveal">⚡ Arduino</div>
-      <div class="skill-card reveal">🔥 ESP32</div>
-      <div class="skill-card reveal">📡 ESP8266</div>
-      <div class="skill-card reveal">🌍 IoT Development</div>
-      <div class="skill-card reveal">🤖 Robotics</div>
-      <div class="skill-card reveal">💻 C / C++</div>
-      <div class="skill-card reveal">📌 Sensors</div>
-      <div class="skill-card reveal">🚗 Motor Drivers</div>
-      <div class="skill-card reveal">🖥 OLED / LCD</div>
-      <div class="skill-card reveal">📲 Bluetooth HC-05</div>
-      <div class="skill-card reveal">📶 WiFi Web Server</div>
+      <div class="skill-card tilt-card reveal-up">⚡ Arduino</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.1s">🔥 ESP32</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.2s">📡 ESP8266</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.3s">🌍 IoT Dev</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.4s">🤖 Robotics</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.5s">💻 C / C++</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.6s">📌 Sensors</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.7s">🚗 Drivers</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.8s">🖥 OLED/LCD</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 0.9s">📲 Bluetooth</div>
+      <div class="skill-card tilt-card reveal-up" style="--delay: 1.0s">📶 WiFi</div>
     </div>
   </section>
 
-  <!-- PROJECTS SECTION -->
   <section class="projects" id="projects">
-    <div class="section-title reveal">
-      <h2>Projects</h2>
-      <p>My best robotics & IoT builds</p>
+    <div class="section-header reveal-up">
+      <h2>Featured Projects</h2>
+      <div class="line"></div>
     </div>
 
     <div class="projects-grid">
-
-      <div class="project-card reveal">
-        <img src="images/rfid.jpg" alt="RFID Project">
-        <div class="project-info">
-          <h3>RFID Attendance System with Google Sheets</h3>
+      <div class="project-card tilt-card reveal-up">
+        <div class="card-image">
+          <img src="images/rfid.jpg" alt="RFID Project">
+          <div class="overlay"></div>
+        </div>
+        <div class="project-content">
+          <h3>RFID Attendance System</h3>
           <p>Automated attendance system that uploads student logs to Google Sheets in real-time.</p>
-          <span>Tech Stack: ESP32 | RFID | Telegram | Google Sheets | WiFi</span>
-          <a href="images/rfid.jpg" class="btn primary small">👀 Examine Visual</a>
+          <div class="tags">
+            <span>ESP32</span><span>RFID</span><span>Google Sheets</span>
+          </div>
+          <a href="images/rfid.jpg" class="btn-link">Examine Visual <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <img src="images/seedrobot.jpg" alt="Robot Project">
-        <div class="project-info">
-          <h3>ESP32 Seed Sowing Robot (WiFi Web Server)</h3>
+      <div class="project-card tilt-card reveal-up">
+        <div class="card-image">
+          <img src="images/seedrobot.jpg" alt="Robot Project">
+          <div class="overlay"></div>
+        </div>
+        <div class="project-content">
+          <h3>ESP32 Seed Sowing Robot</h3>
           <p>WiFi controlled robot that plants seeds using a servo mechanism and web control panel.</p>
-          <span>Tech Stack: ESP8266 | L298N | Servo | Web Server</span>
-          <a href="images/seedrobot.jpg" class="btn primary small">👀 Examine Visual</a>
+          <div class="tags">
+            <span>ESP8266</span><span>Servo</span><span>Web Server</span>
+          </div>
+          <a href="images/seedrobot.jpg" class="btn-link">Examine Visual <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <img src="images/smarthome.jpg" alt="Home Automation">
-        <div class="project-info">
-          <h3>Smart Home Automation (WiFi Relay Control)</h3>
+      <div class="project-card tilt-card reveal-up">
+        <div class="card-image">
+          <img src="images/smarthome.jpg" alt="Home Automation">
+          <div class="overlay"></div>
+        </div>
+        <div class="project-content">
+          <h3>Smart Home Automation</h3>
           <p>Remote control appliances using ESP WiFi relay module with a web-based dashboard.</p>
-          <span>Tech Stack: ESP8266 | Relay | IoT Dashboard</span>
-          <a href="images/smarthome.jpg" class="btn primary small">👀 Examine Visual</a>
+          <div class="tags">
+            <span>ESP8266</span><span>Relay</span><span>IoT</span>
+          </div>
+          <a href="images/smarthome.jpg" class="btn-link">Examine Visual <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <img src="images/bluetoothcar.jpg" alt="Bluetooth Car">
-        <div class="project-info">
-          <h3>Bluetooth Controlled Robot Car</h3>
+      <div class="project-card tilt-card reveal-up">
+        <div class="card-image">
+          <img src="images/bluetoothcar.jpg" alt="Bluetooth Car">
+          <div class="overlay"></div>
+        </div>
+        <div class="project-content">
+          <h3>Bluetooth Controlled Car</h3>
           <p>Android-controlled robotic car using Bluetooth module for movement and steering.</p>
-          <span>Tech Stack: Arduino | HC-05 | L293D</span>
-          <a href="images/bluetoothcar.jpg" class="btn primary small">👀 Examine Visual</a>
+          <div class="tags">
+            <span>Arduino</span><span>HC-05</span><span>L293D</span>
+          </div>
+          <a href="images/bluetoothcar.jpg" class="btn-link">Examine Visual <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <img src="images/plantwater.jpg" alt="Plant Watering">
-        <div class="project-info">
-          <h3>Smart Plant Watering System</h3>
+      <div class="project-card tilt-card reveal-up">
+        <div class="card-image">
+          <img src="images/plantwater.jpg" alt="Plant Watering">
+          <div class="overlay"></div>
+        </div>
+        <div class="project-content">
+          <h3>Smart Plant Watering</h3>
           <p>Automatic irrigation system using soil moisture sensors and water pump automation.</p>
-          <span>Tech Stack: ESP32 | Sensors | Relay | Pump</span>
-          <a href="images/plantwater.jpg" class="btn primary small">👀 Examine Visual</a>
+          <div class="tags">
+            <span>ESP32</span><span>Sensors</span><span>Relay</span>
+          </div>
+          <a href="images/plantwater.jpg" class="btn-link">Examine Visual <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
-      <div class="project-card reveal">
-        <img src="images/esp32cam.jpg" alt="ESP32 CAM">
-        <div class="project-info">
-          <h3>ESP32-CAM Security Camera Project</h3>
+      <div class="project-card tilt-card reveal-up">
+        <div class="card-image">
+          <img src="images/esp32cam.jpg" alt="ESP32 CAM">
+          <div class="overlay"></div>
+        </div>
+        <div class="project-content">
+          <h3>ESP32-CAM Security</h3>
           <p>WiFi live streaming security camera using ESP32-CAM with motion alert concept.</p>
-          <span>Tech Stack: ESP32-CAM | WiFi | Streaming</span>
-          <a href="images/esp32cam.jpg" class="btn primary small">👀 Examine Visual</a>
+          <div class="tags">
+            <span>ESP32-CAM</span><span>Streaming</span><span>WiFi</span>
+          </div>
+          <a href="images/esp32cam.jpg" class="btn-link">Examine Visual <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
   <section class="contact" id="contact">
-    <div class="section-title reveal">
-      <h2>Contact Me</h2>
-      <p>Let's build something awesome 🚀</p>
+    <div class="section-header reveal-up">
+      <h2>Initialize Communication</h2>
+      <div class="line"></div>
     </div>
 
-    <div class="contact-box">
-  <h3>Quick Message Generator ⚡</h3>
-  <p>
-    Fill the details below and click <b>Open Email</b> to send me a message directly.
-    Or just copy the message and paste it anywhere.
-  </p>
+    <div class="contact-box glass-card tilt-card reveal-up">
+      <h3>Quick Message Generator ⚡</h3>
+      <p>Fill the details below and click <b>Open Email</b> to send me a message directly.</p>
 
-  <input type="text" id="userName" placeholder="Your Name" required>
-  <input type="email" id="userEmail" placeholder="Your Email" required>
-  <textarea id="userMessage" placeholder="Your Message..." required></textarea>
+      <div class="input-group">
+        <input type="text" id="userName" placeholder="Your Name" required>
+        <input type="email" id="userEmail" placeholder="Your Email" required>
+      </div>
+      <textarea id="userMessage" placeholder="Your Message..." required></textarea>
 
-  <div class="contact-buttons">
-    <button class="btn-primary" onclick="openEmail()">Open Email 🚀</button>
-    <button class="btn-secondary" onclick="copyMessage()">Copy Message 📋</button>
-    <button class="btn-secondary" onclick="copyEmail()">Copy My Email 📧</button>
-  </div>
+      <div class="contact-buttons">
+        <button class="btn primary full-width" onclick="openEmail()">Open Email 🚀</button>
+        <button class="btn secondary" onclick="copyMessage()">Copy Text 📋</button>
+        <button class="btn secondary" onclick="copyEmail()">Copy Email 📧</button>
+      </div>
 
-  <p id="copyStatus" class="copy-status"></p>
-</div>
+      <p id="copyStatus" class="copy-status"></p>
+    </div>
 
-<script>
-  const myEmail = "jashembedded@gmail.com"; // 👈 CHANGE THIS TO YOUR REAL EMAIL
+    <div class="social-links reveal-up">
+      <a href="https://github.com/JashGardharia" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#" target="_blank"><i class="fas fa-laptop-code"></i> Fiverr</a>
+      <a href="mailto:jashembedded@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </section>
 
-  function openEmail() {
-    const name = document.getElementById("userName").value.trim();
-    const email = document.getElementById("userEmail").value.trim();
-    const message = document.getElementById("userMessage").value.trim();
+  <footer class="footer">
+    <p>© 2026 Jash. Built with ⚡ & 🤖.</p>
+  </footer>
 
-    if (!name || !email || !message) {
-      alert("Please fill all fields first!");
-      return;
+  <script src="script.js"></script>
+  
+  <script>
+    const myEmail = "jashembedded@gmail.com"; 
+
+    function openEmail() {
+      const name = document.getElementById("userName").value.trim();
+      const email = document.getElementById("userEmail").value.trim();
+      const message = document.getElementById("userMessage").value.trim();
+
+      if (!name || !email || !message) {
+        showStatus("⚠️ Please fill all fields first!");
+        return;
+      }
+
+      const subject = encodeURIComponent("Project Inquiry from Portfolio Website");
+      const body = encodeURIComponent(
+        `Hello Jash,\n\nMy Name: ${name}\nMy Email: ${email}\n\nMessage:\n${message}\n\nRegards,\n${name}`
+      );
+
+      window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
     }
 
-    const subject = encodeURIComponent("Project Inquiry from Portfolio Website");
-    const body = encodeURIComponent(
-      `Hello Jash,\n\nMy Name: ${name}\nMy Email: ${email}\n\nMessage:\n${message}\n\nRegards,\n${name}`
-    );
+    function copyMessage() {
+      const name = document.getElementById("userName").value.trim();
+      const email = document.getElementById("userEmail").value.trim();
+      const message = document.getElementById("userMessage").value.trim();
 
-    window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
-  }
+      if (!name || !email || !message) {
+        showStatus("⚠️ Fill fields to generate copy text");
+        return;
+      }
 
-  function copyMessage() {
-    const name = document.getElementById("userName").value.trim();
-    const email = document.getElementById("userEmail").value.trim();
-    const message = document.getElementById("userMessage").value.trim();
-
-    if (!name || !email || !message) {
-      alert("Please fill all fields first!");
-      return;
-    }
-
-    const finalText =
+      const finalText =
 `Hello Jash,
 
 My Name: ${name}
@@ -252,45 +301,24 @@ ${message}
 Regards,
 ${name}`;
 
-    navigator.clipboard.writeText(finalText);
-    showStatus("Message copied successfully ✅");
-  }
+      navigator.clipboard.writeText(finalText);
+      showStatus("Message copied successfully ✅");
+    }
 
-  function copyEmail() {
-    navigator.clipboard.writeText(myEmail);
-    showStatus("Email copied! 📧");
-  }
+    function copyEmail() {
+      navigator.clipboard.writeText(myEmail);
+      showStatus("Email copied! 📧");
+    }
 
-  function showStatus(text) {
-    const status = document.getElementById("copyStatus");
-    status.innerText = text;
+    function showStatus(text) {
+      const status = document.getElementById("copyStatus");
+      status.innerText = text;
+      status.style.opacity = "1";
 
-    setTimeout(() => {
-      status.innerText = "";
-    }, 2500);
-  }
-</script>
-
-      <div class="social-box">
-        <h3>Social Links</h3>
-        <p>Find me online 👇</p>
-        <div class="social-links">
-          <a href="https://github.com/JashGardharia" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Fiverr</a>
-          <a href="mailto:jashembedded@gmail.com" target="_blank">Email</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BACK TO TOP -->
-  <button id="backToTop">↑</button>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2026 Jash. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+      setTimeout(() => {
+        status.style.opacity = "0";
+      }, 2500);
+    }
+  </script>
 </body>
 </html>
