@@ -23,21 +23,6 @@ body {
   perspective: 1000px; /* Essential for 3D effects */
 }
 
-.footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 15px 0;
-  position: relative;
-}
-
-.footer p {
-  margin: 0;
-  text-align: center;
-}
-
 /* --- CANVAS BACKGROUND --- */
 #bg-canvas {
   position: fixed;
@@ -388,4 +373,21 @@ body {
   .hero-visual { margin-top: 50px; }
   .section-title { font-size: 2rem; }
   .nav-links { display: none; }
+}
+footer.footer {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding: 20px 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+footer.footer p {
+  width: 100% !important;
+  margin: 0 !important;
+  text-align: center !important;
 }
