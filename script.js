@@ -69,7 +69,7 @@ function openEmail() {
     return;
   }
 
-  status.innerText = "Mailing... 📩";
+  status.innerText = "> Mailing... 📩";
 
   const subject = encodeURIComponent("Project Inquiry: " + name);
 
@@ -112,11 +112,11 @@ THANK YOU`;
   status.innerText = "> Copied to clipboard 📋🔥";
 }
 
-// --- 6. 3D TILT EFFECT (SMOOTHER + CLEANER) ---
-document.addEventListener("mousemove", (e) => {
-  const cards = document.querySelectorAll("[data-tilt]");
+// --- 6. 3D TILT EFFECT (FIXED: NO DRUNK BOXES) ---
+const tiltCards = document.querySelectorAll("[data-tilt]");
 
-  cards.forEach((card) => {
+tiltCards.forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
 
     const x = e.clientX - rect.left;
@@ -128,22 +128,23 @@ document.addEventListener("mousemove", (e) => {
     const rotateX = ((y - h / 2) / h) * -10;
     const rotateY = ((x - w / 2) / w) * 10;
 
-    card.style.transition = "transform 0.08s ease-out";
+    card.style.transition = "transform 0.05s ease-out";
     card.style.transform = `
       perspective(1000px)
       rotateX(${rotateX}deg)
       rotateY(${rotateY}deg)
-      scale3d(1.02, 1.02, 1.02)
+      scale3d(1.03, 1.03, 1.03)
     `;
   });
-});
 
-document.addEventListener("mouseout", () => {
-  const cards = document.querySelectorAll("[data-tilt]");
-  cards.forEach((card) => {
+  card.addEventListener("mouseleave", () => {
     card.style.transition = "transform 0.4s ease";
-    card.style.transform =
-      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(0deg)
+      rotateY(0deg)
+      scale3d(1, 1, 1)
+    `;
   });
 });
 
@@ -218,6 +219,7 @@ function animateParticles() {
 initParticles();
 animateParticles();
 
+// Resize canvas when screen changes
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
