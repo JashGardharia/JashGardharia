@@ -21,19 +21,19 @@
   <div id="loader">
     <div class="loader-content">
       <div class="hex-spinner"></div>
-      <h1 class="glitch" data-text="SYSTEM_BOOT">SYSTEM_BOOT</h1>
-      <p class="console-text">> Initializing Jash_Portfolio_v3.0...</p>
+      <h1 class="glitch" data-text="Loading Portfolio..">Loading Portfolio..</h1>
+      <p class="console-text">> Initializing Jash. Portforlio</p>
       <p class="console-text">> Loading Modules: Arduino, ESP32, IoT...</p>
     </div>
   </div>
 
   <nav class="navbar glass">
-    <div class="logo">JASH<span class="highlight">_DEV</span></div>
+    <div class="logo">Jash<span class="highlight">.</span></div>
     <ul class="nav-links">
-      <li><a href="#hero" class="active">/Home</a></li>
-      <li><a href="#skills">/Arsenal</a></li>
-      <li><a href="#projects">/Projects</a></li>
-      <li><a href="#contact">/Contact</a></li>
+      <li><a href="#hero" class="active">Home</a></li>
+      <li><a href="#skills">Arsenal</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="hamburger">
       <div class="line"></div>
@@ -60,24 +60,24 @@
           <div class="hologram-card glass">
             <div class="card-header">
               <i class="fas fa-microchip chip-icon"></i>
-              <span>CORE_STACK.exe</span>
+              <span>The Core:</span>
             </div>
             <div class="stat-row">
-              <span>CONTROLLER</span>
+              <span>Controller</span>
               <div class="bar"><div class="fill" style="width:95%"></div></div>
             </div>
             <div class="stat-row">
-              <span>SENSORS</span>
+              <span>Sensors </span>
               <div class="bar"><div class="fill" style="width:90%"></div></div>
             </div>
             <div class="stat-row">
-              <span>ACTUATORS</span>
+              <span>Actuators</span>
               <div class="bar"><div class="fill" style="width:85%"></div></div>
             </div>
             <div class="code-snippet">
               <span class="c-pink">void</span> <span class="c-blue">setup</span>() {<br>
               &nbsp;&nbsp;<span class="c-green">Serial</span>.<span class="c-yellow">begin</span>(115200);<br>
-              &nbsp;&nbsp;<span class="c-comment">// System Ready</span><br>
+              &nbsp;&nbsp;<span class="c-comment">// System Ready! R U?</span><br>
               }
             </div>
           </div>
@@ -132,6 +132,8 @@
             <div class="tags">
               <span>ESP32</span>
               <span>API</span>
+              <span>Google Sheet</span>
+              <span>Telegram</span>
             </div>
             <a href="images/rfid.jpg" target="_blank" class="link-btn">View Schematics</a>
           </div>
@@ -147,7 +149,8 @@
             <p>WiFi controlled sowing mechanism with servo precision.</p>
             <div class="tags">
               <span>Robotics</span>
-              <span>WebUI</span>
+              <span>WebServer</span>
+              <span>Servo</span>
             </div>
             <a href="images/seedrobot.jpg" target="_blank" class="link-btn">View Schematics</a>
           </div>
@@ -162,8 +165,9 @@
             <h3>Home Automation</h3>
             <p>Full relay control dashboard hosted on ESP8266.</p>
             <div class="tags">
-              <span>IoT</span>
+              <span>ESP 8266</span>
               <span>Relays</span>
+              <span>IoT</span>
             </div>
             <a href="images/smarthome.jpg" target="_blank" class="link-btn">View Schematics</a>
           </div>
@@ -178,6 +182,7 @@
             <h3>Bluetooth Rover</h3>
             <p>Android app controlled rover via HC-05 module.</p>
             <div class="tags">
+              <span>Arduino</span>
               <span>HC-05</span>
               <span>L298N</span>
             </div>
@@ -194,8 +199,10 @@
             <h3>Smart Irrigation</h3>
             <p>Soil moisture feedback loop with auto-pump trigger.</p>
             <div class="tags">
-              <span>Analog</span>
+              <span>Soil Moisture</span>
               <span>Automation</span>
+              <span>Relays</span>
+              <span>Pump</span>
             </div>
             <a href="images/plantwater.jpg" target="_blank" class="link-btn">View Schematics</a>
           </div>
@@ -212,6 +219,8 @@
             <div class="tags">
               <span>Streaming</span>
               <span>Camera</span>
+              <span>Surveillance</span>
+              <span>Security</span>
             </div>
             <a href="images/esp32cam.jpg" target="_blank" class="link-btn">View Schematics</a>
           </div>
@@ -223,27 +232,27 @@
     <section id="contact" class="section">
       <div class="contact-container glass" data-tilt>
         <div class="contact-header">
-          <h2>ESTABLISH UPLINK</h2>
+          <h2>Message Generator ⚡</h2>
           <div class="line-deco"></div>
         </div>
         
         <div class="terminal-interface">
           <div class="input-group">
-            <label>> ENTER_NAME:</label>
+            <label>> Your Name:</label>
             <input type="text" id="userName" placeholder="_" autocomplete="off">
           </div>
           <div class="input-group">
-            <label>> ENTER_EMAIL:</label>
+            <label>> Your Email:</label>
             <input type="email" id="userEmail" placeholder="_" autocomplete="off">
           </div>
           <div class="input-group">
-            <label>> TRANSMISSION_DATA:</label>
+            <label>> Message:</label>
             <textarea id="userMessage" placeholder="Type your message here..."></textarea>
           </div>
           
           <div class="cmd-actions">
-            <button class="btn primary-btn" onclick="openEmail()">EXECUTE SEND_MAIL <i class="fas fa-paper-plane"></i></button>
-            <button class="btn secondary-btn" onclick="copyMessage()">COPY_TO_CLIPBOARD</button>
+            <button class="btn primary-btn" onclick="openEmail()">Send Mail ✉️<i class="fas fa-paper-plane"></i></button>
+            <button class="btn secondary-btn" onclick="copyMessage()">Copy to Clipboard 📋</button>
           </div>
           <p id="copyStatus" class="status-log">Waiting for input...</p>
         </div>
@@ -257,9 +266,13 @@
     </section>
   </main>
 
-  <footer>
+  <button id="backToTop">↑</button>
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <p>© 2026 Jash. All Rights Reserved.</p>
   </footer>
+ 
 
   <script src="script.js"></script>
 </body>
