@@ -1,11 +1,20 @@
-// --- 1. LOADER ---
+// --- 1. LOADER (PREMIUM DOT + BAR INTRO) ---
 window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+
   setTimeout(() => {
-    const loader = document.getElementById("loader");
-    loader.style.opacity = "0";
-    setTimeout(() => (loader.style.display = "none"), 500);
-  }, 1500);
+    loader.classList.add("loader-done");
+  }, 1600);
+
+  setTimeout(() => {
+    loader.classList.add("loader-hide");
+  }, 2200);
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 3000);
 });
+
 
 // --- 2. HAMBURGER MENU ---
 const hamburger = document.getElementById("hamburger");
