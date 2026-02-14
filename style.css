@@ -23,6 +23,21 @@ body {
   perspective: 1000px; /* Essential for 3D effects */
 }
 
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+}
+
+.footer p {
+  margin: 0;
+  text-align: center;
+}
+
 /* --- CANVAS BACKGROUND --- */
 #bg-canvas {
   position: fixed;
