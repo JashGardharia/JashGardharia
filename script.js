@@ -21,7 +21,7 @@ function openEmail() {
         return;
     }
 
-    status.innerText = "> Executing MAil-To Protocol...";
+    status.innerText = "Mailing...";
     const subject = encodeURIComponent("Project Inquiry: " + name);
     const body = encodeURIComponent(
         `\nFrom: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}\n\nThank you!`
@@ -37,13 +37,13 @@ function copyMessage() {
     const status = document.getElementById("copyStatus");
 
     if (!name || !email || !message) {
-        status.innerText = "> ERROR: NO_DATA_TO_COPY.";
+        status.innerText = "No Data to Copy! 🙃";
         return;
     }
 
     const finalText = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
     navigator.clipboard.writeText(finalText);
-    status.innerText = "> SUCCESS: DATA_COPIED_TO_CLIPBOARD.";
+    status.innerText = "Copied! 📋";
 }
 
 // --- 3. CUSTOM 3D TILT EFFECT (Vanilla JS) ---
