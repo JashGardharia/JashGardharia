@@ -1,20 +1,58 @@
-// --- 1. LOADER (PREMIUM DOT + BAR INTRO) ---
+// --- 1. LOADER (DOT FLIES INTO NAV LOGO) ---
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
+  const loaderDot = document.getElementById("loaderDot");
+  const navDot = document.getElementById("navDot");
 
+  // Wait for progress bar to finish
   setTimeout(() => {
-    loader.classList.add("loader-done");
+    // Get positions of loaderDot and navDot
+    const start = loaderDot.getBoundingClientRect();
+    const end = navDot.getBoundingClientRect();
+
+    // Clone loader dot to animate freely
+    const flyingDot = loaderDot.cloneNode(true);
+    flyingDot.style.position = "fixed";
+    flyingDot.style.left = start.left + "px";
+    flyingDot.style.top = start.top + "px";
+    flyingDot.style.margin = "0";
+    flyingDot.style.zIndex = "10000";
+    flyingDot.style.transition = "all 0.9s cubic-bezier(0.2, 1, 0.3, 1)";
+    flyingDot.style.animation = "none";
+    flyingDot.style.transform = "scale(1.8)";
+
+    document.body.appendChild(flyingDot);
+
+    // Hide original dot inside loader
+    loaderDot.style.opacity = "0";
+
+    // Animate dot flying to navbar dot
+    setTimeout(() => {
+      flyingDot.style.left = end.left + "px";
+      flyingDot.style.top = end.top + "px";
+      flyingDot.style.transform = "scale(1)";
+    }, 50);
+
+    // After flight, remove loader and glow navbar dot
+    setTimeout(() => {
+      flyingDot.remove();
+      loader.style.opacity = "0";
+
+      navDot.classList.add("glow");
+
+      setTimeout(() => {
+        navDot.classList.remove("glow");
+      }, 1000);
+
+    }, 1000);
+
+    // Fully remove loader
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 1600);
+
   }, 1600);
-
-  setTimeout(() => {
-    loader.classList.add("loader-hide");
-  }, 2200);
-
-  setTimeout(() => {
-    loader.style.display = "none";
-  }, 3000);
 });
-
 
 // --- 2. HAMBURGER MENU ---
 const hamburger = document.getElementById("hamburger");
