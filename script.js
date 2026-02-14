@@ -24,9 +24,16 @@ function openEmail() {
     status.innerText = "Mailing...";
     const subject = encodeURIComponent("Project Inquiry: " + name);
     const body = encodeURIComponent(
-        `\nFrom: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}\n\nThank you!`
-    );
+    `NAME: ${name}
 
+    EMAIL: ${email}
+
+    MESSAGE:
+    ${message}
+
+    THANK YOU`
+    );
+   
     window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
 }
 
