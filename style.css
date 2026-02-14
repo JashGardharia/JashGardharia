@@ -520,3 +520,80 @@ section {
     display: flex;
   }
 }
+/* --- LOADER PREMIUM INTRO --- */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #050509;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+
+.loader-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.loader-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00f3ff;
+  box-shadow: 0 0 20px #00f3ff;
+  animation: dotPulse 1s infinite ease-in-out;
+}
+
+/* Progress bar container */
+.loader-bar {
+  margin-top: 25px;
+  width: 240px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+/* Progress fill */
+.loader-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00f3ff, #bc13fe);
+  border-radius: 50px;
+  animation: loadBar 1.6s ease forwards;
+}
+
+/* Dot pulse while loading */
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.6); }
+}
+
+/* Bar fill animation */
+@keyframes loadBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* After loading, dot becomes part of Jash */
+.loader-done .loader-dot {
+  animation: none;
+  transform: scale(1.1);
+  transition: all 0.8s ease;
+  box-shadow: 0 0 40px #00f3ff;
+}
+
+/* Loader exit animation */
+.loader-hide {
+  opacity: 0;
+  pointer-events: none;
+}
