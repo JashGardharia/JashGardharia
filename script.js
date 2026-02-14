@@ -1,99 +1,155 @@
 // --- 1. LOADER ---
 window.addEventListener("load", () => {
-    setTimeout(() => {
-        const loader = document.getElementById("loader");
-        loader.style.opacity = "0";
-        setTimeout(() => loader.style.display = "none", 500);
-    }, 2000);
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => (loader.style.display = "none"), 500);
+  }, 1500);
 });
 
-// --- 2. EMAIL LOGIC (Your Request) ---
-const myEmail = "jashembedded@gmail.com"; 
+// --- 2. HAMBURGER MENU ---
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("show");
+  });
+});
+
+// --- 3. BACK TO TOP BUTTON ---
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// --- 4. SCROLL REVEAL ---
+window.addEventListener("scroll", revealElements);
+
+function revealElements() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add("active");
+    }
+  });
+}
+
+revealElements();
+
+// --- 5. EMAIL MESSAGE GENERATOR ---
+const myEmail = "jashembedded@gmail.com";
 
 function openEmail() {
-    const name = document.getElementById("userName").value.trim();
-    const email = document.getElementById("userEmail").value.trim();
-    const message = document.getElementById("userMessage").value.trim();
-    const status = document.getElementById("copyStatus");
+  const name = document.getElementById("userName").value.trim();
+  const email = document.getElementById("userEmail").value.trim();
+  const message = document.getElementById("userMessage").value.trim();
+  const status = document.getElementById("copyStatus");
 
-    if (!name || !email || !message) {
-        status.innerText = "> Please Fill all the Fields!";
-        return;
-    }
+  if (!name || !email || !message) {
+    status.innerText = "> Please fill all the fields 😭";
+    return;
+  }
 
-    status.innerText = "Mailing...";
-    const subject = encodeURIComponent("Project Inquiry: " + name);
-    const body = encodeURIComponent(
-    `Name: ${name}
+  status.innerText = "Mailing... 📩";
 
-    Email: ${email}
+  const subject = encodeURIComponent("Project Inquiry: " + name);
 
-    Message:
-    ${message}
+  const body = encodeURIComponent(
+`NAME: ${name}
 
-    Thank You`
-    );
-   
-    window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+EMAIL: ${email}
+
+MESSAGE:
+${message}
+
+THANK YOU`
+  );
+
+  window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
 }
 
 function copyMessage() {
-    const name = document.getElementById("userName").value.trim();
-    const email = document.getElementById("userEmail").value.trim();
-    const message = document.getElementById("userMessage").value.trim();
-    const status = document.getElementById("copyStatus");
+  const name = document.getElementById("userName").value.trim();
+  const email = document.getElementById("userEmail").value.trim();
+  const message = document.getElementById("userMessage").value.trim();
+  const status = document.getElementById("copyStatus");
 
-    if (!name || !email || !message) {
-        status.innerText = "No Data to Copy! 🙃";
-        return;
-    }
+  if (!name || !email || !message) {
+    status.innerText = "> No data to copy 🙃";
+    return;
+  }
 
-    const finalText = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-    navigator.clipboard.writeText(finalText);
-    status.innerText = "Copied! 📋";
+  const finalText =
+`NAME: ${name}
+
+EMAIL: ${email}
+
+MESSAGE:
+${message}
+
+THANK YOU`;
+
+  navigator.clipboard.writeText(finalText);
+  status.innerText = "> Copied to clipboard 📋🔥";
 }
 
-// --- 3. CUSTOM 3D TILT EFFECT (Vanilla JS) ---
-// This makes elements look at the mouse cursor
+// --- 6. 3D TILT EFFECT (SMOOTHER + CLEANER) ---
 document.addEventListener("mousemove", (e) => {
-    const cards = document.querySelectorAll("[data-tilt]");
-    
-    cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        // Check if mouse is near the card to activate tilt
-        // Only tilt if mouse is roughly over the element or container
-        const w = rect.width;
-        const h = rect.height;
-        
-        // Calculate rotation (max 15 degrees)
-        const rotateX = ((y - h / 2) / h) * -15; 
-        const rotateY = ((x - w / 2) / w) * 15;
+  const cards = document.querySelectorAll("[data-tilt]");
 
-        // Apply style
-        card.style.transform = `
-            perspective(1000px) 
-            rotateX(${rotateX}deg) 
-            rotateY(${rotateY}deg) 
-            scale3d(1.02, 1.02, 1.02)
-        `;
-    });
+  cards.forEach((card) => {
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const w = rect.width;
+    const h = rect.height;
+
+    const rotateX = ((y - h / 2) / h) * -10;
+    const rotateY = ((x - w / 2) / w) * 10;
+
+    card.style.transition = "transform 0.08s ease-out";
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale3d(1.02, 1.02, 1.02)
+    `;
+  });
 });
 
-// Reset tilt when mouse leaves
 document.addEventListener("mouseout", () => {
-    const cards = document.querySelectorAll("[data-tilt]");
-    cards.forEach((card) => {
-        card.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
-    });
+  const cards = document.querySelectorAll("[data-tilt]");
+  cards.forEach((card) => {
+    card.style.transition = "transform 0.4s ease";
+    card.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+  });
 });
 
-
-// --- 4. 3D BACKGROUND ANIMATION (Canvas) ---
-const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
+// --- 7. 3D BACKGROUND PARTICLE ANIMATION ---
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -101,65 +157,69 @@ canvas.height = window.innerHeight;
 let particlesArray;
 
 class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2;
-        this.speedX = (Math.random() * 1) - 0.5;
-        this.speedY = (Math.random() * 1) - 0.5;
-        this.color = Math.random() > 0.5 ? '#00f3ff' : '#bc13fe'; // Cyan or Pink
-    }
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-    }
-    draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-    }
+  constructor() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2;
+    this.speedX = Math.random() * 0.8 - 0.4;
+    this.speedY = Math.random() * 0.8 - 0.4;
+    this.color = Math.random() > 0.5 ? "#00f3ff" : "#bc13fe";
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+  }
+
+  draw() {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
 }
 
 function initParticles() {
-    particlesArray = [];
-    for (let i = 0; i < 100; i++) {
-        particlesArray.push(new Particle());
-    }
+  particlesArray = [];
+  for (let i = 0; i < 110; i++) {
+    particlesArray.push(new Particle());
+  }
 }
 
 function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-        particlesArray[i].draw();
-        
-        // Draw lines between particles if close
-        for (let j = i; j < particlesArray.length; j++) {
-            const dx = particlesArray[i].x - particlesArray[j].x;
-            const dy = particlesArray[i].y - particlesArray[j].y;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < 100) {
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(0, 243, 255, ${1 - distance/100})`;
-                ctx.lineWidth = 0.5;
-                ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                ctx.stroke();
-            }
-        }
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < particlesArray.length; i++) {
+    particlesArray[i].update();
+    particlesArray[i].draw();
+
+    for (let j = i; j < particlesArray.length; j++) {
+      const dx = particlesArray[i].x - particlesArray[j].x;
+      const dy = particlesArray[i].y - particlesArray[j].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 120) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(0, 243, 255, ${1 - distance / 120})`;
+        ctx.lineWidth = 0.5;
+        ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+        ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+        ctx.stroke();
+      }
     }
-    requestAnimationFrame(animateParticles);
+  }
+
+  requestAnimationFrame(animateParticles);
 }
 
 initParticles();
 animateParticles();
 
-// Resize canvas handling
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initParticles();
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  initParticles();
 });
