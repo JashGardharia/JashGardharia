@@ -4,272 +4,234 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jash | Embedded Systems Developer</title>
+
   <link rel="stylesheet" href="style.css" />
-  
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+  <!-- BACKGROUND CANVAS -->
   <canvas id="bg-canvas"></canvas>
-  <div class="vignette"></div>
 
+  <!-- LOADER -->
   <div id="loader">
-    <div class="loader-content">
-      <div class="hex-spinner"></div>
-      <h1 class="glitch" data-text="Loading Portfolio..">Loading Portfolio..</h1>
-      <h1>                                                                   </h1>
-      <p class="console-text">Jash. Embedded Systems Dev.</p>
+    <div class="loader-box">
+      <div class="spinner"></div>
+      <h2>Loading Portfolio...</h2>
+      <p>Embedded Systems | Robotics | IoT</p>
     </div>
   </div>
 
-  <nav class="navbar glass">
-    <div class="logo">Jash<span class="highlight">.</span></div>
-    <ul class="nav-links">
-      <li><a href="#hero" class="active">Home</a></li>
-      <li><a href="#skills">Arsenal</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="hamburger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Jash.<span>.</span></div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <section id="hero" class="hero-section">
-      <div class="container3d">
-        <div class="hero-content" data-tilt>
-          <div class="status-badge">🟢 ONLINE // OPEN TO WORK</div>
-          <h1 class="hero-title">EMBEDDED <br><span class="gradient-text">SYSTEMS</span></h1>
-          <p class="hero-sub">Architecting the physical-digital bridge with <strong>ESP32</strong>, <strong>IoT</strong>, and <strong>Robotics</strong>.</p>
-          
-          <div class="cta-group">
-            <a href="#projects" class="btn primary-btn">Initialize Projects <i class="fas fa-code-branch"></i></a>
-            <a href="#contact" class="btn secondary-btn">Connect <i class="fas fa-link"></i></a>
-          </div>
-        </div>
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-content reveal">
+      <h1>Hi, I'm <span>Jash</span></h1>
+      <h2>Embedded Systems Developer | Arduino | ESP32 | IoT</h2>
+      <p>
+        I build smart robotics and IoT automation systems using Arduino and ESP32.
+        I love building real-world tech that actually does something.
+      </p>
 
-        <div class="hero-visual" data-tilt>
-          <div class="hologram-card glass">
-            <div class="card-header">
-              <i class="fas fa-microchip chip-icon"></i>
-              <span>The Core:</span>
-            </div>
-            <div class="stat-row">
-              <span>Controller</span>
-              <div class="bar"><div class="fill" style="width:95%"></div></div>
-            </div>
-            <div class="stat-row">
-              <span>Sensors </span>
-              <div class="bar"><div class="fill" style="width:90%"></div></div>
-            </div>
-            <div class="stat-row">
-              <span>Actuators</span>
-              <div class="bar"><div class="fill" style="width:85%"></div></div>
-            </div>
-            <div class="code-snippet">
-              <span class="c-pink">void</span> <span class="c-blue">setup</span>() {<br>
-              &nbsp;&nbsp;<span class="c-green">Serial</span>.<span class="c-yellow">begin</span>(115200);<br>
-              &nbsp;&nbsp;<span class="c-comment">// System Ready! R U?</span><br>
-              }
-            </div>
-          </div>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-card reveal" data-tilt>
+      <div class="glow-circle"></div>
+      <h3>Tech Stack</h3>
+      <ul>
+        <li>⚡ Arduino / ESP32 / ESP8266</li>
+        <li>📡 WiFi Web Server + Bluetooth</li>
+        <li>🤖 Robotics + Motor Drivers</li>
+        <li>🖥 OLED / LCD Interfaces</li>
+        <li>📌 Sensors + Automation Systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="section-title reveal">
+      <h2>About Me</h2>
+      <p>Who I am and what I build</p>
+    </div>
+
+    <div class="about-content reveal glass-box" data-tilt>
+      <p>
+        I'm <b>Jash</b>, an Embedded Systems Developer focused on <b>Arduino, ESP32, IoT, and Robotics</b>.
+        I design real-world automation systems using sensors, motors, relays, and communication modules.
+        My projects include <b>WiFi-controlled robots, RFID automation, smart home systems, and ESP32-CAM security projects</b>.
+        I also build clean web dashboards for IoT control.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
+    <div class="section-title reveal">
+      <h2>Skills</h2>
+      <p>Technologies I use for robotics & IoT systems</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal" data-tilt>⚡ Arduino</div>
+      <div class="skill-card reveal" data-tilt>🔥 ESP32</div>
+      <div class="skill-card reveal" data-tilt>📡 ESP8266</div>
+      <div class="skill-card reveal" data-tilt>🌍 IoT Development</div>
+      <div class="skill-card reveal" data-tilt>🤖 Robotics</div>
+      <div class="skill-card reveal" data-tilt>💻 C / C++</div>
+      <div class="skill-card reveal" data-tilt>📌 Sensors</div>
+      <div class="skill-card reveal" data-tilt>🚗 Motor Drivers</div>
+      <div class="skill-card reveal" data-tilt>🖥 OLED / LCD</div>
+      <div class="skill-card reveal" data-tilt>📲 Bluetooth HC-05</div>
+      <div class="skill-card reveal" data-tilt>📶 WiFi Web Server</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects">
+    <div class="section-title reveal">
+      <h2>Projects</h2>
+      <p>My best robotics & IoT builds</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card reveal" data-tilt>
+        <img src="images/rfid.jpg" alt="RFID Project">
+        <div class="project-info">
+          <h3>RFID Attendance System 📋</h3>
+          <p>Automated attendance system that uploads logs to Google Sheets in real-time.</p>
+          <span>Arduino | RFID | Google Sheets | WiFi</span>
+          <a href="#" class="btn primary small">Examine Visual 👀</a>
         </div>
       </div>
-    </section>
 
-    <section id="skills" class="section">
-      <h2 class="section-title" data-text="TECHNICAL ARSENAL">TECHNICAL ARSENAL</h2>
-      
-      <div class="skills-wrapper">
-        <div class="skill-box" data-tilt>
-          <div class="icon"><i class="fas fa-bolt"></i></div>
-          <h3>Arduino</h3>
-        </div>
-        <div class="skill-box" data-tilt>
-          <div class="icon"><i class="fas fa-fire"></i></div>
-          <h3>ESP32</h3>
-        </div>
-        <div class="skill-box" data-tilt>
-          <div class="icon"><i class="fas fa-wifi"></i></div>
-          <h3>IoT / MQTT</h3>
-        </div>
-        <div class="skill-box" data-tilt>
-          <div class="icon"><i class="fas fa-robot"></i></div>
-          <h3>Robotics</h3>
-        </div>
-        <div class="skill-box" data-tilt>
-          <div class="icon"><i class="fas fa-code"></i></div>
-          <h3>C / C++</h3>
-        </div>
-        <div class="skill-box" data-tilt>
-          <div class="icon"><i class="fas fa-satellite-dish"></i></div>
-          <h3>Sensors</h3>
+      <div class="project-card reveal" data-tilt>
+        <img src="image/seedrobot.jpg" alt="Robot Project">
+        <div class="project-info">
+          <h3>ESP32 Seed Sowing Robot 🌱</h3>
+          <p>WiFi controlled robot that plants seeds using a servo mechanism + web control panel.</p>
+          <span>ESP32 | L298N | Servo | Web Server</span>
+          <a href="#" class="btn primary small">Examine Visual 👀</a>
         </div>
       </div>
-    </section>
 
-    <section id="projects" class="section">
-      <h2 class="section-title" data-text="DEPLOYED SYSTEMS">DEPLOYED SYSTEMS</h2>
-      
-      <div class="project-grid">
-        
-        <div class="project-card glass" data-tilt>
-          <div class="img-wrapper">
-            <img src="images/rfid.jpg" alt="RFID System">
-            <div class="overlay"></div>
-          </div>
-          <div class="content">
-            <h3>RFID Attendance 📄</h3>
-            <p>Automated cloud logging system via Google Sheets API.</p>
-            <div class="tags">
-              <span>ESP32</span>
-              <span>API</span>
-              <span>Google Sheet</span>
-              <span>Telegram</span>
-            </div>
-            <a href="images/rfid.jpg" target="_blank" class="link-btn">Examine Visual 👀</a>
-          </div>
-        </div>
-
-        <div class="project-card glass" data-tilt>
-          <div class="img-wrapper">
-            <img src="images/seedrobot.jpg" alt="Seed Robot">
-            <div class="overlay"></div>
-          </div>
-          <div class="content">
-            <h3>Agro-Tech Robot 🌱</h3>
-            <p>WiFi controlled sowing mechanism with servo precision.</p>
-            <div class="tags">
-              <span>Robotics</span>
-              <span>WebServer</span>
-              <span>Servo</span>
-            </div>
-            <a href="images/seedrobot.jpg" target="_blank" class="link-btn">Examine Visual 👀</a>
-          </div>
-        </div>
-
-        <div class="project-card glass" data-tilt>
-          <div class="img-wrapper">
-            <img src="images/smarthome.jpg" alt="Smart Home">
-            <div class="overlay"></div>
-          </div>
-          <div class="content">
-            <h3>Home Automation 🏡</h3>
-            <p>Full relay control dashboard hosted on ESP8266.</p>
-            <div class="tags">
-              <span>ESP 8266</span>
-              <span>Relays</span>
-              <span>IoT</span>
-            </div>
-            <a href="images/smarthome.jpg" target="_blank" class="link-btn">Examine Visual 👀</a>
-          </div>
-        </div>
-
-        <div class="project-card glass" data-tilt>
-          <div class="img-wrapper">
-            <img src="images/bluetoothcar.jpg" alt="RC Car">
-            <div class="overlay"></div>
-          </div>
-          <div class="content">
-            <h3>Bluetooth Rover 📡</h3>
-            <p>Android app controlled rover via HC-05 module.</p>
-            <div class="tags">
-              <span>Arduino</span>
-              <span>HC-05</span>
-              <span>L298N</span>
-            </div>
-            <a href="images/bluetoothcar.jpg" target="_blank" class="link-btn">Examine Visual 👀</a>
-          </div>
-        </div>
-
-        <div class="project-card glass" data-tilt>
-          <div class="img-wrapper">
-            <img src="images/plantwater.jpg" alt="Watering System">
-            <div class="overlay"></div>
-          </div>
-          <div class="content">
-            <h3>Smart Irrigation 🌵</h3>
-            <p>Soil moisture feedback loop with auto-pump trigger.</p>
-            <div class="tags">
-              <span>Soil Moisture</span>
-              <span>Automation</span>
-              <span>Relays</span>
-              <span>Pump</span>
-            </div>
-            <a href="images/plantwater.jpg" target="_blank" class="link-btn">Examine Visual 👀</a>
-          </div>
-        </div>
-
-        <div class="project-card glass" data-tilt>
-          <div class="img-wrapper">
-            <img src="images/esp32cam.jpg" alt="Security Cam">
-            <div class="overlay"></div>
-          </div>
-          <div class="content">
-            <h3>ESP32-CAM Spy 📸</h3>
-            <p>Live video streaming server over local network.</p>
-            <div class="tags">
-              <span>Streaming</span>
-              <span>Camera</span>
-              <span>Surveillance</span>
-              <span>Security</span>
-            </div>
-            <a href="images/esp32cam.jpg" target="_blank" class="link-btn">Examine Visual 👀</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="contact-container glass" data-tilt>
-        <div class="contact-header">
-          <h2>Message Generator 🚀</h2>
-          <div class="line-deco"></div>
-        </div>
-        
-        <div class="terminal-interface">
-          <div class="input-group">
-            <label>Your Name:</label>
-            <input type="text" id="userName" placeholder="_" autocomplete="off">
-          </div>
-          <div class="input-group">
-            <label>Your Email:</label>
-            <input type="email" id="userEmail" placeholder="_" autocomplete="off">
-          </div>
-          <div class="input-group">
-            <label>Message:</label>
-            <textarea id="userMessage" placeholder="Type your message here..."></textarea>
-          </div>
-          
-          <div class="cmd-actions">
-            <button class="btn primary-btn" onclick="openEmail()">Send Mail ✉️</i></button>
-            <button class="btn secondary-btn" onclick="copyMessage()">Copy to Clipboard 📋</button>
-          </div>
-          <p id="copyStatus" class="status-log">Waiting for input...</p>
-        </div>
-
-        <div class="social-hubs">
-          <a href="https://github.com/JashGardharia" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="mailto:jashembedded@gmail.com"><i class="fas fa-envelope"></i></a>
-          <a href="#"><i class="fas fa-arrow-up"></i></a>
+      <div class="project-card reveal" data-tilt>
+        <img src="images/smarthome.jpg" alt="Home Automation">
+        <div class="project-info">
+          <h3>Smart Home Automation 🏠</h3>
+          <p>Control appliances remotely using ESP relay modules with a clean IoT dashboard.</p>
+          <span>ESP8266 | Relay | IoT Dashboard</span>
+          <a href="#" class="btn primary small">Examine Visual 👀</a>
         </div>
       </div>
-    </section>
+
+      <div class="project-card reveal" data-tilt>
+        <img src="images/bluetoothcar.jpg" alt="Bluetooth Car">
+        <div class="project-info">
+          <h3>Bluetooth Robot Car 📡</h3>
+          <p>Android-controlled robotic car using Bluetooth module for movement + steering.</p>
+          <span>Arduino | HC-05 | Motor Driver</span>
+          <a href="#" class="btn primary small">Examine Visual 👀</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-tilt>
+        <img src="images/plantwater.jpg" alt="Plant Watering">
+        <div class="project-info">
+          <h3>Smart Plant Watering System 🌵</h3>
+          <p>Automatic irrigation system using soil moisture sensors and water pump automation.</p>
+          <span>Arduino | Sensors | Relay | Pump</span>
+          <a href="#" class="btn primary small">Examine Visual 👀</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-tilt>
+        <img src="images/esp32cam.jpg" alt="ESP32 CAM">
+        <div class="project-info">
+          <h3>ESP32-CAM Security Camera 📸</h3>
+          <p>WiFi live streaming security camera project with motion alert concept.</p>
+          <span>ESP32-CAM | WiFi | Streaming</span>
+          <a href="#" class="btn primary small">Examine Visual 👀</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="section-title reveal">
+      <h2>Contact Me</h2>
+      <p>Let's build something awesome 🚀</p>
+    </div>
+
+    <div class="contact-grid reveal">
+
+      <!-- MESSAGE GENERATOR -->
+      <div class="contact-form glass-box" data-tilt>
+        <h3 class="form-title">Message Generator 📩</h3>
+
+        <input type="text" id="userName" placeholder="Your Name" required />
+        <input type="email" id="userEmail" placeholder="Your Email" required />
+        <textarea rows="5" id="userMessage" placeholder="Your Message" required></textarea>
+
+        <div class="form-buttons">
+          <button onclick="openEmail()" class="btn primary">Send Email 📧</button>
+          <button onclick="copyMessage()" class="btn secondary">Copy Text 📋</button>
+        </div>
+
+        <p id="copyStatus" class="status-text">> Waiting for your message...</p>
+      </div>
+
+      <!-- SOCIAL LINKS -->
+      <div class="social-box glass-box" data-tilt>
+        <h3>Social Links</h3>
+        <p>Find me online 👇</p>
+        <div class="social-links">
+          <a href="https://github.com/JashGardharia" target="_blank">GitHub</a>
+          <a href="#" target="_blank">Fiverr</a>
+          <a href="mailto:jashembedded@gmail.com">Email</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop">↑</button>
 
   <!-- FOOTER -->
   <footer class="footer">
     <p>© 2026 Jash. All Rights Reserved.</p>
   </footer>
- 
 
   <script src="script.js"></script>
 </body>
